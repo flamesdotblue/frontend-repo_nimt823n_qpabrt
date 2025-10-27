@@ -1,28 +1,29 @@
-import { useState } from 'react'
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import FeatureGrid from "./components/FeatureGrid";
+import CTASection from "./components/CTASection";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-gradient-to-b from-white to-slate-50 text-slate-900">
+      <Navbar />
+      <main>
+        <Hero />
+        <FeatureGrid />
+        <CTASection />
+      </main>
+      <footer className="border-t border-black/5 py-10 mt-10">
+        <div className="mx-auto max-w-7xl px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-600">
+          <p>© {new Date().getFullYear()} GlassWallet Inc. All rights reserved.</p>
+          <nav className="flex items-center gap-6">
+            <a href="#" className="hover:text-slate-800">Privacy</a>
+            <a href="#" className="hover:text-slate-800">Terms</a>
+            <a href="#" className="hover:text-slate-800">Support</a>
+          </nav>
         </div>
-      </div>
+      </footer>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
